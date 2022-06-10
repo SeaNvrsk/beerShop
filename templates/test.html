@@ -7,11 +7,12 @@
 <body>
 <h1>Привет</h1>
 {% if user.is_authenticated %}
-{{ user.username }}
+    <h2>{{ user.username }}</h2>
 {% else %}
 register
 {% endif %}
 
 {{ login_form }}
+
 </body>
 </html>
