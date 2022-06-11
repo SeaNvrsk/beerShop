@@ -32,6 +32,7 @@ class Product(models.Model):
     styleOfBeer = models.ForeignKey(StyleOfBeer, on_delete=models.CASCADE, verbose_name="Тип пива")
     container = models.CharField(max_length=6, choices=CONTAINER_CHOICES, verbose_name="Тара")
     size = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Объём")
+    image = models.ImageField(verbose_name="Изображение", null=True)
     volume = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Крепость")
     beerDensity = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Плотность пива")
     description = models.CharField(max_length=500, verbose_name="Описание")

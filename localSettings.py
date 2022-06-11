@@ -1,1 +1,0 @@
-key = 'django-insecure-+hh^p#=^^lmmk_(r!h9agpzwg7da-076t$3sjk+sjchwfkqfu^'
