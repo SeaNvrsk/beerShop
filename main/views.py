@@ -12,6 +12,14 @@ def index(request):
     return render(request, 'index.html')
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')
+
+
 def test_url(request):
     info = request.META['CSRF_COOKIE']
     return HttpResponse(info)
