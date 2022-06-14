@@ -43,7 +43,14 @@ INSTALLED_APPS = [
     #---my apps---
     'authentication',
     'shop',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_REDIRECT_URL = '/'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
