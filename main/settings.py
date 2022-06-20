@@ -44,10 +44,13 @@ INSTALLED_APPS = [
     'authentication',
     'shop',
     'crispy_forms',
+    'user.apps.UserConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 LOGIN_REDIRECT_URL = '/'
 
