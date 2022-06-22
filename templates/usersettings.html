@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <p>Привет, {{ user.first_name }} {{ user.second_name }}!</p>
+    <br>
+    <p>email: {{ user.email }}</p>
+    <p> {{ context }}</p>
+    <p><a href="{% url 'password_change' %}">Изменить пароль</a></p>
+    <p><a href="{% url 'logout' %}">Выйти</a></p>
+
+
+{% endblock %}
