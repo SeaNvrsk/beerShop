@@ -1,5 +1,6 @@
 from django.contrib.auth import views
 from django.urls import path
+from .views import RegisterFormView
 
 urlpatterns = [
     path('accounts/login/', views.LoginView.as_view(), name='login'),
@@ -9,5 +10,6 @@ urlpatterns = [
     path('accounts/reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('accounts/reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('accounts/password-change/', views.PasswordChangeView.as_view(), name='password_change'),
+    path('accounts/register', RegisterFormView.as_view(), name='registration'),
     path('accounts/password-change/done/', views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     ]

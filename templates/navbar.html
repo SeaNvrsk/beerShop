@@ -24,7 +24,7 @@
                 <li><a class="dropdown-item" href="{% url 'usersettings' %}">Настройки</a></li>
               {% else %}
             <li><a class="dropdown-item" href="{%  url 'login' %}">Войти</a></li>
-            <li><a class="dropdown-item" href="">Регистрация</a></li>
+            <li><a class="dropdown-item" href="{% url 'registration' %}">Регистрация</a></li>
               {% endif %}
           </ul>
         </li>

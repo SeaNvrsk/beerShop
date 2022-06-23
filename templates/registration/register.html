@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-block">Зарегестрироваться</button>
+    </form>
+
+{% endblock %}

@@ -23,5 +23,5 @@ def contacts(request):
 
 
 def userSettings(request):
-    context = UserProfile.birthDay
-    return render(request, 'usersettings.html', {'context': context})
+    userInfo = UserProfile.objects.get(user=request.user)
+    return render(request, 'usersettings.html', {'userInfo': userInfo})
