@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+    <br>
+    <h2>Привет, {{ user.get_full_name }}!</h2>
+    <br>
+    {% if userInfo.avatar %}
+        <img src="{{ userInfo.avatar.url }}" alt="Изображение">
+    {% else %}
+    Нет картинки
+    {% endif %}
+
+    <br>
+    <p>email: {{ user.email }}</p>
+    {% if user.is_staff %}
+    <p>Staff: {{ user.is_staff }}</p>
+    {% endif %}
+    <p> Дата рождения: {{ userInfo.birthDay }}</p>
+    <p> Пол: {{ userInfo.gender }}</p>
+    <p> Телефон: {{ userInfo.phoneNum }}</p>
+    <p> Дата регистрации: {{ user.date_joined }}</p>
+    <br>
+    <p><a href="{% url 'password_change' %}">Изменить пароль</a></p>
+    <p><a href="{% url 'logout' %}">Выйти</a></p>
+
+
+{% endblock %}

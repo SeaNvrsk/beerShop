@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+    <div class="container">
+        <br>
+        <p><img src="{{ cont.image.url }}"></p>
+        <p>Наименование: {{ cont.name }}</p>
+        <p>Стиль пива: {{ cont.styleOfBeer }}</p>
+        <p>Старана: {{ cont.country }}</p>
+        <p>Цена: {{ cont.price }} руб.</p>
+        <p>Количество: {{ cont.quantity }}</p>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        {% if cont.comments.all %}
+            <h4>Комментарии:</h4>
+            {% for comment in cont.comments.all %}
+                <p>{{ comment }}</p>
+                <p>Рейтинг: {{ comment.rating }}</p>
+                <p>Отзыв: {{ comment.body }}</p>
+                <p>{{ comment.postAdded }}</p>
+                <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <table>{{ form|crispy }}</table>
+            <button type="submit">Оставить отзыв</button>
+        </form>
+    </div>
+    <br>
+{% endblock %}
+
