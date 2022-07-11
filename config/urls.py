@@ -3,19 +3,20 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.conf import settings
-from apps.core.views import index, about, contacts, userSettings, test, productListView, productItem
+from apps.core.views import *
+from apps.core.services.views import *
 
 
 urlpatterns = [
     path('', include('apps.authentication.urls')),
-    path('', index, name='index'),
+    path('', indexView),
     path('admin/', admin.site.urls),
-    path('index/', index, name='index'),
-    path('about/', about, name='about'),
-    path('contacts/', contacts, name='contacts'),
-    path('usersettings/', userSettings, name='usersettings'),
+    path('index/', indexView, name='index'),
+    path('about/', aboutView, name='about'),
+    path('contacts/', contactsView, name='contacts'),
+    path('usersettings/', userSettingsView, name='usersettings'),
     path('list/', productListView, name='list'),
-    path('list/<str:slug>', productItem, name='product'),
+    path('list/<str:slug>', productItemView, name='product'),
     re_path(r'\d\d/\d\d', test),
 
 ]

@@ -1,14 +1,19 @@
-{% extends 'index.html' %}
-{% include 'navbar.html' %}
+{% extends 'core/index.html' %}
 {% load static %}
 
 
 {% block content %}
-{% for cont in content %}
-    <p>Наименование: <a href="{% url 'product' cont.slug %}">{{ cont.name }}</a></p>
-    <p> <img src="{{ cont.image.url }}"></p>
+    <div class="container">
+        <div class="row">
+            {% for cont in content %}
+            <div class="col-sm">
+                    <p>Наименование: <a href="{% url 'product' cont.slug %}">{{ cont.name }}</a></p>
+                    <p><img src="{{ cont.image.url }}" height="300"></p>
+                    <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div> 
 
-    <br>
-{% endfor %}
 {% endblock %}
 

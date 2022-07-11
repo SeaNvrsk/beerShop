@@ -35,6 +35,12 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
         </li>
+      {% if user.is_staff %}
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/admin/">Админка</a>
+        </li>
+      {% endif %}
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">

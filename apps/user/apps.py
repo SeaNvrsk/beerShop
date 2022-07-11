@@ -7,3 +7,5 @@ class UserConfig(AppConfig):
     verbose_name = 'User'
     label = 'user'
 
+    def ready(self):
+        import apps.user.signals

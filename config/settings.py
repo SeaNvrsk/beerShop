@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #---my apps---
     'apps.authentication',
-    'apps.shop',
+    'apps.core',
     'crispy_forms',
     'apps.user.apps.UserConfig',
 
@@ -64,6 +64,37 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(filename)s %(levelname)-8s %(module)s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(funcName)s %(levelname)-8s %(module)s %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log'
+        }
+    },
+    'loggers': {
+        'main': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file']
+        }
+    }
+}
 
 ROOT_URLCONF = 'config.urls'
 

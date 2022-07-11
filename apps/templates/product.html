@@ -1,5 +1,4 @@
-{% extends 'index.html' %}
-{% include 'navbar.html' %}
+{% extends 'core/index.html' %}
 {% load crispy_forms_tags %}
 
 
@@ -20,6 +19,7 @@
         {% if cont.comments.all %}
             <h4>Комментарии:</h4>
             {% for comment in cont.comments.all %}
+
                 <p>{{ comment }}</p>
                 <p>Рейтинг: {{ comment.rating }}</p>
                 <p>Отзыв: {{ comment.body }}</p>
