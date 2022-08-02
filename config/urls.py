@@ -9,6 +9,7 @@ from apps.core.services.views import *
 
 urlpatterns = [
     path('', include('apps.authentication.urls')),
+    re_path(r'^cart/', include('apps.cart.urls')),
     path('', indexView),
     path('admin/', admin.site.urls),
     path('index/', indexView, name='index'),
@@ -17,7 +18,8 @@ urlpatterns = [
     path('usersettings/', userSettingsView, name='usersettings'),
     path('list/', productListView, name='list'),
     path('list/<str:slug>', productItemView, name='product'),
-    re_path(r'\d\d/\d\d', test),
+    path('test/', testView),
+    re_path(r'\d\d/\d\d', testView),
 
 ]
 

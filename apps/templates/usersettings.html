@@ -3,10 +3,10 @@
 
 {% block content %}
     <br>
-    <h2>Привет, {{ user.get_full_name }}!</h2>
+    <h2 align="center">Привет, {{ user.get_full_name }}!</h2>
     <br>
     {% if userInfo.avatar %}
-        <img src="{{ userInfo.avatar.url }}" alt="Изображение">
+        <img src="{{ userInfo.avatar.url }} "width="300" alt="Изображение">
     {% else %}
     Нет картинки
     {% endif %}

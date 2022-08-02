@@ -31,8 +31,11 @@ def contactsView(request):
 
 
 @login_required()
-def test(request):
-    return HttpResponse('test')
+def testView(request):
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+    return render(request, 'test.html', {'context': num_visits})
+
 
 
 

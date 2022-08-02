@@ -18,7 +18,7 @@ from local_settings import *
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = os.path.join(BASE_DIR, 'apps/templates')
 
-
+CART_SESSION_ID = 'cart'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'apps.authentication',
     'apps.core',
     'crispy_forms',
-    'apps.user.apps.UserConfig',
+    'apps.user',
+    'apps.cart',
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
