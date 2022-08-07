@@ -9,7 +9,7 @@ from apps.core.services.views import *
 
 urlpatterns = [
     path('', include('apps.authentication.urls')),
-    path('cart/', include('apps.cart.urls', namespace='core')),
+    path('cart/', include('apps.cart.urls', namespace='cart')),
     path('', indexView),
     path('admin/', admin.site.urls),
     path('index/', indexView, name='index'),

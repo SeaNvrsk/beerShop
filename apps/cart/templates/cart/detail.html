@@ -24,13 +24,13 @@
                         <a href="{{ product.get_absolute_url }}">
                             <img src="
                                 {% if product.image %}
-                                    {{ product.image.url }}
+                                    {{ product.image.ur l }}
                                 {% else %}
                                     {% static "img/no_image.png" %}
                                 {% endif %}">
                         </a>
                     </td>
-                    <td>{{ product.name }}</td>
+                    <td>{{ item.name }}</td>
                     <td>{{ item.quantity }}</td>
                     <td><a href="{% url "cart:cart_remove" product.id%}">Remove</a></td>
                     <td class="num">${{ item.price }}</td>
@@ -46,7 +46,7 @@
         </tbody>
     </table>
     <p class="text-right">
-        <a href="#" class="button light">Continue shopping</a>
+        <a href="{% url 'list' %}" class="button light">Continue shopping</a>
         <a href="#" class="button">Checkout</a>
     </p>
 {% endblock %}

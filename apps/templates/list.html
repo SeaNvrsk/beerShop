@@ -11,9 +11,18 @@
                     <p><img src="{{ cont.image.url }}" height="300"></p>
                     <br>
             </div>
+                    <p class="price">{{ cont.price }} руб.</p>
+<form action="{% url 'cart:cart_add' cont.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+</form>
             {% endfor %}
         </div>
     </div> 
+
+
+
 
 {% endblock %}
 
