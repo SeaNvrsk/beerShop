@@ -4,6 +4,7 @@ from django.shortcuts import render
 from apps.user.models import UserProfile
 from apps.core.models import *
 from apps.core.forms import CommentForm
+from apps.cart.forms import CartAddProductForm
 
 
 logger = logging.getLogger('main')
@@ -18,7 +19,8 @@ def userSettingsView(request):
 def productListView(request):
     logger.info('TEST')
     content = Product.objects.all()
-    return render(request, 'list.html', {'content': content})
+    cart_product_form = CartAddProductForm()
+    return render(request, 'list.html', {'content': content, 'cart_product_form': cart_product_form})
 
 
 def productItemView(request, slug):

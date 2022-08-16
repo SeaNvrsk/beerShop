@@ -4,6 +4,7 @@ from django.contrib.auth.admin import User
 from django.forms import ModelForm
 
 
+
 class StyleOfBeer(models.Model):
     class Meta:
         verbose_name = 'Тип пива'
@@ -73,5 +74,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.name)
+
 
 

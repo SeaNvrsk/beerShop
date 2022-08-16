@@ -10,11 +10,16 @@ def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)
+    print(product, product_id, form)
     if form.is_valid():
+        print(product)
         cd = form.cleaned_data
         cart.add(product=product,
                  quantity=cd['quantity'],
                  update_quantity=cd['update'])
+    else:
+        print('not working')
+    print(form.errors)
     return redirect('cart:cart_detail')
 
 

@@ -5,6 +5,10 @@
 {% endblock %}
 {% block content %}
     <h1>Your shopping cart</h1>
+    <div id="subheader">
+    <div class="cart">
+        Your cart is empty.
+    </div>
     <table class="cart">
         <thead>
         <tr>
@@ -24,17 +28,17 @@
                         <a href="{{ product.get_absolute_url }}">
                             <img src="
                                 {% if product.image %}
-                                    {{ product.image.ur l }}
+                                    {{ product.image.url }}
                                 {% else %}
                                     {% static "img/no_image.png" %}
-                                {% endif %}">
+                                {% endif %}" height="200">
                         </a>
                     </td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.quantity }}</td>
                     <td><a href="{% url "cart:cart_remove" product.id%}">Remove</a></td>
-                    <td class="num">${{ item.price }}</td>
-                    <td class="num">${{ item.total_price }}</td>
+                    <td class="num">{{ item.price }} руб. </td>
+                    <td class="num">{{ item.total_price }} руб.</td>
                 </tr>
             {% endwith %}
         {% endfor %}
