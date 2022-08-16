@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.admin import User
 from django.forms import ModelForm
-
+from mixer.backend.django import mixer
 
 
 class StyleOfBeer(models.Model):
@@ -74,6 +74,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.name)
-
-
 
